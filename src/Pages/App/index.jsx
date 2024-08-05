@@ -10,6 +10,9 @@ import Management from '../Management'
 import Cart from '../Cart'
 import NotFound from '../NotFound'
 
+import NavBar from '../../Components/Navbar'
+import Footer from '../../Components/Footer'
+
 import './App.css'
 
 function App() {
@@ -30,9 +33,16 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <AppRoutes />
-      </BrowserRouter>
+      <div className='flex flex-col min-h-screen'>
+        <BrowserRouter>
+          <NavBar />
+          <AppRoutes />
+
+          <Footer />
+        </BrowserRouter>
+
+      </div>
+
     </>
   )
 }
