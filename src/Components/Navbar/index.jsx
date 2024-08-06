@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import { BsCart3 } from "react-icons/bs";
+
 
 const NavBar = () => {
     return (
@@ -25,7 +27,12 @@ const NavBar = () => {
                     <NavLink to="/management">Management</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/cart">Cart</NavLink>
+                    <div className="flex items-center">
+                        <NavLink to="/cart"><BsCart3 /></NavLink>
+                        <p className="ml-2">0</p>
+
+                    </div>
+
                 </li>
 
 
