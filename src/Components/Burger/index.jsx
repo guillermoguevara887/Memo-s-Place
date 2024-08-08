@@ -1,10 +1,10 @@
 
 import React from 'react'
-import './style.css'
 
 
 
-const Pizzacard = ({ name, price, imageUrl, description }) => {
+
+const Burgercard = ({ name, price, imageUrl, description }) => {
     return (
         <div className="m-4 p-4 w-80 h-auto border border-gray-300 rounded-lg shadow-md flex flex-col">
             <div>
@@ -36,7 +36,7 @@ const Pizzacard = ({ name, price, imageUrl, description }) => {
 
 }
 
-export default Pizzacard;
+export default Burgercard;
 
 
 

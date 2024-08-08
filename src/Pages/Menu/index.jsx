@@ -2,10 +2,16 @@ import React, { useState } from 'react'
 import Pizzacard from '../../Components/Pizza'
 import pizzas from '../../Components/Pizza/data'
 
+import Burgercard from '../../Components/Burger'
+import burgers from '../../Components/Burger/data'
+
+import Drinkcard from '../../Components/Drink'
+import drinks from '../../Components/Drink/data'
+
 
 
 function Menu() {
-    console.log(pizzas)
+
     let menuPizza = pizzas.map((pizza, index) => {
         return (
 
@@ -21,6 +27,34 @@ function Menu() {
 
 
 
+        )
+    });
+
+    let menuBurger = burgers.map((burger, index) => {
+        return (
+
+            <Burgercard
+                key={index}
+                name={burger.name}
+                description={burger.description}
+                price={burger.price}
+                ingredients={burger.ingredients}
+                sizeOptions={burger.sizeOptions}
+                imageUrl={burger.imageUrl}
+            />
+        )
+    });
+
+    let menuDrink = drinks.map((drink, index) => {
+        return (
+
+            <Drinkcard
+                key={index}
+                name={drink.name}
+                description={drink.description}
+                price={drink.price}
+                imageUrl={drink.imageUrl}
+            />
         )
     });
 
@@ -40,16 +74,22 @@ function Menu() {
                 <h2 onClick={() => handleTab(1)} className={activeTab === 1 ? 'text-red-900' : ''}>Pizza</h2>
                 < h2 onClick={() => handleTab(2)} className={activeTab === 2 ? 'text-red-900' : ''}> Burgers</ h2>
                 <h2 onClick={() => handleTab(3)} className={activeTab === 3 ? 'text-red-900' : ''}>Drinks</h2>
-                <h2 onClick={() => handleTab(4)} className={activeTab === 4 ? 'text-red-900' : ''}>Deserts</h2>
+
             </div >
             <div>
                 {activeTab === 1 &&
                     <div className='flex mt-12'>
                         {menuPizza}
                     </div>}
-                {activeTab === 2 && <div>Contenido de Burger</div>}
-                {activeTab === 3 && <div>Contenido de Drink</div>}
-                {activeTab === 4 && <div>Contenido de Dessert</div>}
+                {activeTab === 2 &&
+                    <div className='flex mt-12'>
+                        {menuBurger}
+                    </div>}
+                {activeTab === 3 &&
+                    <div className='flex justify-center mt-12'>
+                        {menuDrink}
+                    </div>}
+
             </div>
 
 

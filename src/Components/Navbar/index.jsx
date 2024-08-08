@@ -12,24 +12,34 @@ const NavBar = () => {
             </ul>
             <ul className="flex justify-end gap-12  pr-20 font-semibold mt-2 text-lg ">
                 <li>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/"
+                        className={({ isActive }) => (isActive ? 'underline' : '')}>Home</NavLink>
+
                 </li>
                 <li>
-                    <NavLink to="/menu">Menu</NavLink>
+                    <NavLink to="/menu"
+                        className={({ isActive }) => (isActive ? 'underline' : '')}>Menu</NavLink>
+
                 </li>
                 <li>
-                    <NavLink to="/delivery">Delivery</NavLink>
+                    <NavLink to="/delivery"
+                        className={({ isActive }) => (isActive ? 'underline' : '')}>Delivery</NavLink>
+
                 </li>
                 <li>
-                    <NavLink to="/games">Games</NavLink>
+                    <NavLink to="/games"
+                        className={({ isActive }) => (isActive ? 'underline' : '')}>Games</NavLink>
+
                 </li>
                 <li>
-                    <NavLink to="/management">Management</NavLink>
+                    <NavLink to="/management"
+                        className={({ isActive }) => (isActive ? 'underline' : '')}>Management</NavLink>
+
                 </li>
                 <li>
                     <div className="flex items-center">
-                        <NavLink to="/cart"><BsCart3 /></NavLink>
-                        <p className="ml-2">0</p>
+                        <NavLink to="/cart"><BsCart3 size={24} /></NavLink>
+                        <p className="ml-2 text-lg">0</p>
 
                     </div>
 
